@@ -14,10 +14,24 @@ def menu():
     print("2. View the summary statistics")
     print("3. View Average Temperature")
     print("4. Plot Min, Avg and Max Temperatures")
-    print("5. Exit")
-    choice = input("Enter your choice (1-5): ")
+    print("5. Input your own data and obtain a chart")
+    print("6. Exit")
+    choice = input("Enter your choice (1-6): ")
     return choice
-    print("Hello")
+
+def user_data():
+    user_input = str(input("Enter a month within 2026: "))
+    user_temp_month = []
+    user_list_month = []
+    while True:
+        month = input("Enter the month of your choice: ")
+        temperature_month = input("Enter the temperature of the month that you inputted: ")
+
+        user_list_month.append(a)
+        user_temp_month.append(b)
+        
+        option = input("Would you like to continue your data input?: ")
+
 
 
 # --- MAIN LOOP --- 
@@ -57,6 +71,9 @@ while running:
         plt.show()
 
     elif user_choice == "5":
+        user_data()
+
+    elif user_choice == "6":
         print("\n--- Exiting program... Bye!")
         running = False
         exit()
@@ -64,4 +81,4 @@ while running:
     else:
         print("\nInvalid Choice. Please enter a number between 1 and 5")
 
-menu()
+
