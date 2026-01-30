@@ -30,9 +30,44 @@ def user_data():
         user_list_month.append(month)
         user_temp_month.append(temperature_month)
         
-        option = input("Would you like to continue your data input?: ")
+        option = Validator.validate("Would you like to continue your data input?: ")
 
+class Validator:
+    @staticmethod
+    def validate(prompt: str, typ: type = str, allow_empty: bool = False):
+        while True:
+            user_input = input(prompt)
 
+            if typ is str:
+                if not allow_empty and user_input.strip() == "":
+                    print("Please enter a valid option\n")
+                    continue
+                
+                return user_input
+
+            if not allow_empty and user_input.strip() == "":
+                print("Please enter a valid integer\n")
+            elif typ is float:
+                print("Please enter a valid number\n")
+            else:
+                print("Please enter a valid value\n")
+            continue
+        try:
+            if typ is int:
+                return int(user_input)
+            
+            if typ is float:
+                return float(user_input)
+
+            return typ(user_input)
+
+        except ValueError:
+            if typ is int:
+                print("Please enter a valid integer\n")
+            elif typ is float:
+                print("Please enter a valid number\n")
+            else:
+                print("Please enter a valid value\n")
 
 # --- MAIN LOOP --- 
 running = True 
