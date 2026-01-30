@@ -27,8 +27,8 @@ def user_data():
         month = input("Enter the month of your choice: ")
         temperature_month = input("Enter the temperature of the month that you inputted: ")
 
-        user_list_month.append(a)
-        user_temp_month.append(b)
+        user_list_month.append(month)
+        user_temp_month.append(temperature_month)
         
         option = input("Would you like to continue your data input?: ")
 
